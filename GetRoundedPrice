@@ -1,0 +1,8 @@
+<?php
+//GET THE PRICE ROUNDED TO THE NEAREST CENT OF THE BEER USING A SINGLE FUNCTION CALL
+
+echo nl2br(" \t" . "var bostonBar = \"9.991 dollars for a beer?;\";");
+$beerPrice = 9.991;
+$roundedBeerPrice = round($beerPrice);
+echo nl2br("\n var bostonBar = \"$roundedBeerPrice dollars for a beer?;\"; ");
+?>
