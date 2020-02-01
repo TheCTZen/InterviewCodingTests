@@ -1,0 +1,20 @@
+<?php
+  //Calculate Factorial using PHP language
+  $factorial = gmp_fact(5); // 5 * 4 * 3 * 2 * 1
+  echo gmp_strval($fact1) . "\n"
+  ?>
+
+  public class Factorial {
+  //  CALCULATE FACTORIAL – JAVA (Using recursive method)
+  
+    public static void main(String[] args) {
+    System.out.println("Factorial of number 5 is:"+ " " + calculateFactorial(5));
+    }
+
+    public static long calculateFactorial(long n){
+      if (n <= 1)
+      return 1;
+      else
+      return n * calc(n-1);
+    }
+  }
