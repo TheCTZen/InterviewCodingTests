@@ -1,0 +1,14 @@
+<?php
+//WRITE A REGULAR EXPRESSION TO MATCH ANY STRING THAT BEGINS WITH A ^?
+
+$stringToMatch = array("^Russ", "Bob", "^Vicky", "^Scott", "Bobby^");
+$matches = array();
+
+foreach ($stringToMatch as $str) {
+  if (preg_match("/^(\^)/", $str, $m) ) {
+  echo("<br>");
+  print_r($str);
+  }
+}
+
+?>
