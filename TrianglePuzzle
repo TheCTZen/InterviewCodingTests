@@ -1,0 +1,58 @@
+<?php
+	echo nl2br("Created by RUSS REZEPOV for Yodle \n\n");
+	echo nl2br("Objective: To find a MAX number in each Row and \n to show the Total sum of all the MAX
+	numbers \n\n");
+	echo " 1st Row = 1 Number; 2nd Row = 2 numbers; n rows = n Numbers...";
+	echo nl2br("\nGenerating 100 rows with numbers in each Row equaled to the number of the current Row \n");
+
+	//Creating a new file - yodleFile.txt
+	//in the same folder where you start this index.php file
+
+	$yodleFile = fopen("yodleFile.txt", "w") or die("Unable to open file!");
+	$N = 0; // Using for While loop counter
+	$numTotal = 0; // Using for Total Sum of MAX numbers in each Row
+
+	//While loop to generate 100 Rows
+	while ($N<>100) {
+	
+	  	//MAX number in a Row		
+		  $numMaxRow = 0;
+
+		    //For loop to generate random numbers in a Row
+		    for ($j=0; $j<=$N; $j++) {
+			  $randNumber = rand(0,9);
+	
+			  //Writing a rand number to yodleFile.txt
+			  fwrite($yodleFile, $randNumber);
+	
+			  //Comparing a current randNumber with a MAX number in a Row
+			  $numRowCur = $randNumber;
+			    if ($numRowCur > $numMaxRow) {
+			    $numMaxRow = $numRowCur;
+			    }
+		    } //for loop end
+
+		  //Adding all MAX numbers in each Row
+		  $numTotal += $numMaxRow;
+		
+		  //Showing the MAX number next to a Row
+		  fwrite($yodleFile, "&nbsp;&nbsp;&nbsp;" . " MAX: " . $numMaxRow . "\r\n");
+
+		  //Increasing the While loop counter
+		  $N+=1;
+	  } //while loop end
+
+	//Showing the Total of MAX numbers at the end
+	fwrite($yodleFile, "Total Sum number of all MAX numbers in each row = " . $numTotal);
+
+	//Closing yodleFile.txt
+	fclose($yodleFile);
+	
+	echo nl2br("\n");
+	
+	// Outputting the results from yodleFile.txt into the index.php
+	$readYodleFile = fopen("yodleFile.txt", "r") or die("Unable to open the File!");
+	$pageText = fread($readYodleFile, filesize("yodleFile.txt"));
+	echo nl2br($pageText);
+	fclose($readYodleFile);
+?>
