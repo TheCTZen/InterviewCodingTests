@@ -1,0 +1,11 @@
+<?php
+
+  function userAge ($someString) {
+  echo nl2br(" \t" . "var someString = \"021 Years old and loving it!\";");
+  $modifiedString = substr($someString,1,2);
+  echo nl2br("\n $modifiedString; ");
+  }
+
+userAge("021 Years old and loving it!");
+
+?>
