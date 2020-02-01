@@ -1,0 +1,13 @@
+<?php
+//HOW DO YOU CHECK IF AN ELEMENT EXISTS OR NOT IN JQUERY?
+
+echo nl2br(" if( $('#Element').length > 0 ) {
+// If an ID element exists
+}
+
+if( $('.selector').length >0 ) {
+// if a class element exists
+}
+);
+
+?>
