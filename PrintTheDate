@@ -1,0 +1,4 @@
+<?php
+//PRINT THE DATE 2 WEEKS AGO FROM TODAY IN THE MM/DD/YYYY FORMAT
+echo date('m/d/y', strtotime("-2 weeks"));
+?>
