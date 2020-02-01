@@ -1,4 +1,7 @@
 <?php
+//To find a MAX number in each Row and \n to show the Total sum of all the MAX numbers. 1st Row = 1 Number; 2nd Row = 2 numbers; n rows = n Numbers...
+//Generating 100 rows with numbers in each Row equaled to the number of the current Row 
+
 	echo nl2br("Created by RUSS REZEPOV for Yodle \n\n");
 	echo nl2br("Objective: To find a MAX number in each Row and \n to show the Total sum of all the MAX
 	numbers \n\n");
