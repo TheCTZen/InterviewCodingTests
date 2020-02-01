@@ -1,0 +1,26 @@
+//YOU ARE INCLUDING A FILE USER.JS THAT DEFINES THE FOLLOWING NAMESPACE
+//Yes, we can access var name=”Sam” because it is a local variable and we are accessing it within the function
+//in namespace USER. I have added for example nameGlobal and nameLocal.
+
+<script type=”text/javascript”>
+
+var USER = USER|| {};
+var nameGlobal = "Russ";
+var USER = function() {
+var age = 31;
+var nameLocal = "Sam";
+return { birthday: function() {
+window.alert("Happy Birthday!!!");
+age++;
+},
+greeting: function() {
+window.alert("Hello, My name is: " + nameGlobal + " and I am " + age + "years old" );
+window.alert("Hello, My name is: " + nameLocal + " and I am " + age + "years old" );
+}
+}
+};
+var sage = new USER();
+sage.birthday();
+sage.greeting();
+
+</script>
