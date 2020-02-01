@@ -1,0 +1,21 @@
+<?php
+//HOW WOULD YOU RECURSIVELY LIST ALL THE FILES IN A DIRECTORY THAT END IN .PHP?
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator('/xampp/htdocs/Bootstrap')) as $fileName) {
+filter out "." and ".."
+if ( $fileName = glob('*.php') ) {
+print_r($fileName);
+}
+};
+
+foreach (glob("images/*.jpg") as $large) {
+  foreach (glob("*.php") as $filename) {
+  echo "$filename\n";
+  echo str_replace("","","$filename\n");
+  echo str_replace("","","<a href='$filename'>$filename</a>\n");
+  }
+}
+
+$files = glob('/xampp/htdocs/Bootstrap/*.php');
+print_r($files);
+
+?>
