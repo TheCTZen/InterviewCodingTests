@@ -1,0 +1,20 @@
+<?php
+
+//WHAT DOES THE FOLLOWING CODE DO?
+//The following code prints out all prime numbers under 2000. The prime number is the number that greater
+//than 1 and that doesn’t have positive divisors other than 1 and itself
+
+$i = 2;
+while ($i<2000) {
+$flag = true;
+$j = 2;
+while ($j<$i) {
+$flag = $i%$j > 0;
+if (!$flag) break;
+$j++;
+}
+if ($flag) print "$i\n";
+$i++;
+}
+
+?>
