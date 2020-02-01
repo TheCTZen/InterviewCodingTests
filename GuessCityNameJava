@@ -1,0 +1,88 @@
+13. Guess a city name in Java
+
+
+	import java.io.BufferedReader; 
+	import java.io.IOException; 
+	import java.io.InputStreamReader; 
+	public class CityNamesGame  
+	{ 
+	    public static void main(String[] args) throws IOException  
+	    { 
+	       boolean gameExit = false;
+	       boolean gameExit2 = false;
+	       char lastCharCheck = '-';
+	       
+	        // Printing the read line 
+	        do
+	           {
+	                //Enter data using BufferReader 
+	                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+	                
+	                // Reading data using readLine 
+	                String name = reader.readLine(); 
+	                
+	                        //Getting a First Character of The Entered City
+	                        System.out.println("The City is: " + name);  
+	                        
+	                        char nameFirstCh = name.charAt(0);
+	                        char [] nameCh = name.toCharArray();
+	                        char lastCh = nameCh[nameCh.length - 1];
+	                        
+	                        if (!(lastCh==lastCharCheck) & !(name.charAt(0) == 'e' & name.charAt(1) == 'x' & name.charAt(2) == 'i' & name.charAt(3) == 't'))
+	                            {
+	                              System.out.println("Current City Last Ch: " + lastCh);
+	                            
+	                            } else if ((lastCh==lastCharCheck) & !(name.charAt(0) == 'e' & name.charAt(1) == 'x' & name.charAt(2) == 'i' & name.charAt(3) == 't')) 
+	                                   {                   
+	                                    System.out.println("Current City Last Ch: " + lastCh);
+	                                    System.out.println("Please Enter a New City that Starts With: " + lastCh);
+	                            
+	                                    // Reading New City Name Using ReadLine 
+	                                    BufferedReader reader2 = new BufferedReader(new InputStreamReader(System.in)); 
+	                                    String newName = reader2.readLine(); 
+	                                                                                              
+	                                    //Getting First ch of the New City Name
+	                                    char newNameFirstCh = newName.charAt(0);
+	                                    
+	                                    //Getting Last ch of the New City
+	                                    char [] newNameCh = newName.toCharArray();
+	                                    char newNameLastCh = newNameCh[newNameCh.length - 1];
+	                                    //Saving New Name's Last ch For Future Check
+	                                    lastCharCheck = newNameLastCh; 
+	                                    
+	                                       //(lastCh!==newNameLastCh
+	                                        //  do {
+	                                        //Asking to Enter
+	                                      
+	                                    
+	                                        /*
+	                                        if (newNameFirstCh == lastCh) {
+	                                            System.out.println("2. New City First Ch: " + newNameFirstCh);
+	                                            System.out.println("2. New City Name is: " + newName);
+	                                            
+	                                            //Saving New City Last Character as lastCh
+	                                            
+	                                            
+	                                        } else {
+	                                                System.out.println("Please Enter a New City that Starts with :" + lastCh);
+	                                                //gameExit2 = false;
+	                                                }
+	                                        **/
+	                          //  } while (gameExit2 != true);
+	                            
+	                    } else {
+	                        System.out.println("Thank you For Playing CityNamesGame");
+	                        System.out.println("GoodBye!");
+	
+
+	                        gameExit = true;
+	                        
+	                       }
+	                    
+	                      
+	            }//do
+	        
+	        while (gameExit != true);
+	    } 
+	} 
+
