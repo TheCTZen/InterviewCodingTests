@@ -1,0 +1,18 @@
+--SELECT ALL DUPLICATES FROM A COLUMN `NAME` IN A TABLE T, YOU CAN ASSUME THERE EXISTS A UNIQUE KEY ID:
+
+CREATE TABLE T (id int NOT NULL PRIMARY KEY, name NOT NULL); <br>
+INSERT INTO T (id, name) VALUES(1, 'Russ');
+INSERT INTO T (id, name) VALUES(2, 'Russ');
+INSERT INTO T (id, name) VALUES(3, 'Scott');
+
+SELECT name, count(*)
+FROM t
+GROUP BY name
+HAVING ( count(*) > 1 )
+
++------------+-------------+
+| name | count(*) |
++------------+-------------+
+| Russ | 2 |
+| Scott | 1 |
++------------+-------------+
