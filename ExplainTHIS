@@ -1,0 +1,4 @@
+WHAT IS DIFFERENCE BETWEEN $(THIS) AND ‘THIS’ IN JQUERY
+"this" is the DOM object, whereas "$(this) is the jQuery wrapper around same.
+When using "this", you can call DOM methods on it, but not jQuery methods.
+When using "$(this)", you can call jQuery methods on it, but not DOM methods
