@@ -1,0 +1,45 @@
+<?php
+//REMOVE DUPLICATE ITEMS IN AN ARRAY - PHP
+//variable $arrayDup contains array list with duplicate items
+$arrayDup = array( 'java', 'php' 'java', 'justone', 'javascript', 'csharp', 'mysql', 'java', 'reactjs' );
+
+//clear arryalist without duplicate items
+$arrayUni = array_unique($arrayDup);
+
+//we can also find items that have duplicates only
+$arrayDupOnly = array_diff_key( $arrayDup, $arrayUni );
+
+//We can count how many times items appear in the array list
+array_count_values($arrayDup); 
+?>
+
+//REMOVE DUPLICATE ITEMS IN AN ARRAY - JAVA
+import java.util.*;
+
+public class removeDuplicates {
+
+public static void main(String args[]) {
+
+int[] arrayOrigin = {5, 5, 3, 2, 1, 5, 2, 4, 1, 2};
+
+Arrays.sort(arrayOrigin);
+
+  for (int k = 0; k < arrayOrigin.length; k++) {
+    System.out.println("Initial size of arrayOrigin: " + arrayOrigin[k]);
+  }
+
+  int current = arrayOrigin[0];
+  boolean found = false;
+  
+  for (int i = 0; i < arrayOrigin.length; i++) {
+    if (current == arrayOrigin[i] && !found) {
+    found = true;
+    } else if (current != arrayOrigin[i]) {
+    System.out.println("Original Number: " + " " + current + " ");
+    current = arrayOrigin[i];
+    found = false;
+    }
+  }
+
+System.out.println("Original Number:" + " " + current); } }
+
