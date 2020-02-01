@@ -1,0 +1,12 @@
+//USING JQUERY ADD A CLASS OF ‘MODIFIED’ TO THE PARENT DIV OF A TEXTBOX WITH THE ID OF USERCOMMENTS
+
+<div> //Parent DOM element
+  <div id="userComments" //Child DOM element
+    User Comments: <input type="text" name="Comments" value="Comments"><br>
+  </div>
+</div>
+
+<script src="../../dist/js/bootstrap.min.js">
+  $("#userComments").parent().addClass("Modified");
+  });
+</script>
