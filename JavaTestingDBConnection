@@ -1,0 +1,57 @@
+package com.edassist.automation;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Driver;
+import java.*;
+
+
+//all names and passwords have been changed
+public class ConnectMSSQLServer {
+     public static void main(String[] args) {
+
+        Connection conn = null;
+        String dbName = "edassist_data_db_stg";
+        String serverip="192.168.0.111";
+        String serverName = "STGSRVDB01"; 
+        String serverport="1433";
+        String url = "jdbc:sqlserver://"+serverName+":"+serverport+";databaseName="+dbName+"";
+        Statement stmt = null;
+        ResultSet result = null;
+        String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        String databaseUserName = "stg_user";
+        String databasePassword = "password";
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            conn = java.sql.DriverManager.getConnection(url, databaseUserName, databasePassword);
+            stmt = conn.createStatement();
+            result = null;
+            String AppNumber, AppID;
+            result = stmt.executeQuery("select TOP 2 * from dbo.Application");
+
+            if (result == null )
+                {
+                    System.out.println("No Connection to the DB");
+                }
+            
+                while (result.next()) {
+                AppNumber = result.getString("ApplicationNumber");
+                AppID = result.getString("ApplicationID");              
+                System.out.println(AppNumber+"  "+AppID +"Connected to the DB");
+            }
+           
+            
+            conn.close();
+        } 
+        
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+      public static void SQLPrint() {
+          System.out.println("ApplicationNumber:");
+                
+            }
+}
