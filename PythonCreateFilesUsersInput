@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+#Create a script to read a user’s input as int and create files based on the user’s input. Print the content of each file:
+#Write a script that takes a number as input, and writes “Hello, world!” to that number of files in the current directory. 
+#You may use any language that you’re comfortable with, and may use the internet to assist you.
+
+#python3
+fileCount=0
+
+while fileCount!=11
+print(“To Exit enter 11 Otherwise enter 1-10 ”)
+fileCount = input("Please enter a number of files")
+
+if (fileCount = 0):
+		print("Please enter a number between 1-10")
+	
+elif: (fileCount = 11)
+		print(“you entered 11, The program is exiting”)
+		break
+
+elif: (!isinstance(fileCount, int)):
+	print("You have not entered an integer number \n")
+	
+else: 
+		for i in fileCount:
+		
+		#writing to a file
+		fname = "file" + str(i) + ".txt"
+		f=open(fname, "w")
+		f.write("Hello World!")
+		f.close
+
+		#reading from the file
+		f=open(fname, "r")
+contents=f.read(fname)
+		print(contents + "\n")
+		f.close
